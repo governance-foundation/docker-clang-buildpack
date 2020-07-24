@@ -16,6 +16,7 @@ jobs:
     steps:
       - uses: actions/checkout@v1
       - name: set envirnment variables
+        if: github.ref != 'refs/heads/master'
         run: |
           source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_config.sh)
       - name: build and test docker image
@@ -34,4 +35,4 @@ jobs:
       - name: update registry description with readme on master
         if: github.ref == 'refs/heads/master'
         run: |
-          docker run --rm -v $(pwd):/data/ aemdesign/dockerhub-description "$DOCKER_USERNAME" "$DOCKER_PASSWORD" "$IMAGE"
+          docker run --rm -v $(pwd):/data/ aemdesign/dockerhub-description "$DOCKER_USERNAME" "$DOCKER_PASSWORD" "$ORGANISATION_NAME/clang-buildpack"
