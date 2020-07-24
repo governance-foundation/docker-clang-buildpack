@@ -1,13 +1,12 @@
 # Clang Build Pack
 
-[![build_status](https://github.com/governance-foundation/docker-clang-buildpack/workflows/ci/badge.svg)](https://github.com/governance-foundation/docker-clang-buildpack/actions?workflow=ci)
+[![build_status](https://github.com/governance-foundation/docker-clang-buildpack/workflows/ci/badge.svg?branch=ubuntu-10)](https://github.com/governance-foundation/docker-clang-buildpack/actions?query=workflow%3Aci)
 [![github license](https://img.shields.io/github/license/governance-foundation/docker-clang-buildpack)](https://github.com/governance-foundation/docker-clang-buildpack)
 [![github issues](https://img.shields.io/github/issues/governance-foundation/docker-clang-buildpack)](https://github.com/governance-foundation/docker-clang-buildpack)
 [![github last commit](https://img.shields.io/github/last-commit/governance-foundation/docker-clang-buildpack)](https://github.com/governance-foundation/docker-clang-buildpack)
 [![github repo size](https://img.shields.io/github/repo-size/governance-foundation/docker-clang-buildpack)](https://github.com/governance-foundation/docker-clang-buildpack)
 [![docker stars](https://img.shields.io/docker/stars/gvfn/clang-buildpack)](https://hub.docker.com/r/gvfn/clang-buildpack)
 [![docker pulls](https://img.shields.io/docker/pulls/gvfn/clang-buildpack)](https://hub.docker.com/r/gvfn/clang-buildpack)
-[![github release](https://img.shields.io/github/release/governance-foundation/docker-clang-buildpack)](https://github.com/governance-foundation/docker-clang-buildpack)
 
 This is docker image with [LLVM/Clang](https://llvm.org/) and [Boost](https://www.boost.org/)
 
