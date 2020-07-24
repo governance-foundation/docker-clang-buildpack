@@ -4,10 +4,8 @@
 [![github license](https://img.shields.io/github/license/governance-foundation/docker-clang-buildpack)](https://github.com/governance-foundation/docker-clang-buildpack)
 [![github issues](https://img.shields.io/github/issues/governance-foundation/docker-clang-buildpack)](https://github.com/governance-foundation/docker-clang-buildpack)
 [![github last commit](https://img.shields.io/github/last-commit/governance-foundation/docker-clang-buildpack)](https://github.com/governance-foundation/docker-clang-buildpack)
-[![github repo size](https://img.shields.io/github/repo-size/governance-foundation/docker-clang-buildpack)](https://github.com/governance-foundation/docker-clang-buildpack)
-[![docker stars](https://img.shields.io/docker/stars/aemdesign/centos-java-buildpack)](https://hub.docker.com/r/aemdesign/centos-java-buildpack)
-[![docker pulls](https://img.shields.io/docker/pulls/aemdesign/centos-java-buildpack)](https://hub.docker.com/r/aemdesign/centos-java-buildpack)
-[![github release](https://img.shields.io/github/release/governance-foundation/docker-clang-buildpack)](https://github.com/governance-foundation/docker-clang-buildpack)
+[![docker stars](https://img.shields.io/docker/stars/gvfn/clang-buildpack)](https://hub.docker.com/r/gvfn/clang-buildpack)
+[![docker pulls](https://img.shields.io/docker/pulls/gvfn/clang-buildpack)](https://hub.docker.com/r/gvfn/clang-buildpack)
 
 This is docker image with [LLVM/Clang](https://llvm.org/) and [Boost](https://www.boost.org/)
 
