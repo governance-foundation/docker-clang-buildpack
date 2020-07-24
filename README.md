@@ -1,6 +1,5 @@
 # Clang Build Pack
 
-[![build_status](https://github.com/governance-foundation/docker-clang-buildpack/workflows/ci/badge.svg)](https://github.com/governance-foundation/docker-clang-buildpack/actions?workflow=ci)
 [![github license](https://img.shields.io/github/license/governance-foundation/docker-clang-buildpack)](https://github.com/governance-foundation/docker-clang-buildpack)
 [![github issues](https://img.shields.io/github/issues/governance-foundation/docker-clang-buildpack)](https://github.com/governance-foundation/docker-clang-buildpack)
 [![github last commit](https://img.shields.io/github/last-commit/governance-foundation/docker-clang-buildpack)](https://github.com/governance-foundation/docker-clang-buildpack)
@@ -18,6 +17,10 @@ Following is the list of packages included
 * pyenv using [https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer](https://github.com/pyenv/pyenv-installer/raw/master/bin/pyenv-installer)
 * Lib: Boost
 * Lib: Curl
+
+## Versions
+
+* [ubuntu-10 ![ci](https://github.com/governance-foundation/docker-clang-buildpack/workflows/ci/badge.svg?branch=ubuntu-10)](https://github.com/governance-foundation/docker-clang-buildpack/tree/ubuntu-10)
 
 ## Running
 
