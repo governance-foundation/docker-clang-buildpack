@@ -18,13 +18,11 @@ jobs:
       - name: set envirnment variables
         run: |
           source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_config.sh)
-          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_version.sh)
       - name: build and test docker image
         if: github.ref != 'refs/heads/master'
         run: |
           docker build --pull -t $IMAGE:${GITHUB_BRANCH##*/} .
-          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/container_verify.sh)
-          (cd test && ./run_tests.sh "$IMAGE:${GITHUB_BRANCH##*/}")
+          ./test/run_tests.sh "$IMAGE:${GITHUB_BRANCH##*/}" "$TEST_COMMAND_VERIFY"
           docker images
       - name: login to docker registry
         if: github.ref != 'refs/heads/master'
