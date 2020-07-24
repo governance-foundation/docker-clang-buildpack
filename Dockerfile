@@ -94,7 +94,6 @@ RUN dpkg --add-architecture i386 \
     && PYTHON_CONFIGURE_OPTS="--enable-shared" pyenv install ${PYTHON_VERSION} \
     && pyenv global ${PYTHON_VERSION} \
     && pip install -q --upgrade --no-cache-dir pip \
-    && pip install -q --no-cache-dir devops cmake==${CMAKE_VERSION} \
     && chown -R devops:1001 /opt/pyenv \
     # remove all __pycache__ directories created by pyenv
     && find /opt/pyenv -iname __pycache__ -print0 | xargs -0 rm -rf \
