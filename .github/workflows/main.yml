@@ -1,0 +1,39 @@
+name: ci
+
+on: push
+
+jobs:
+  build:
+    
+    runs-on: ubuntu-latest
+    env:
+      DOCKER_REGISTRY: docker.io
+      ORGANISATION_NAME: gvfn
+      DOCKER_USERNAME: ${{ secrets.DOCKER_USERNAME }}
+      DOCKER_PASSWORD: ${{ secrets.DOCKER_PASSWORD }}
+      GITHUB_BRANCH: ${{ github.ref }}
+
+    steps:
+      - uses: actions/checkout@v1
+      - name: set envirnment variables
+        run: |
+          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_config.sh)
+          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/github_get_version.sh)
+      - name: build and test docker image
+        if: github.ref != 'refs/heads/master'
+        run: |
+          docker build --pull -t $IMAGE:${GITHUB_BRANCH##*/} .
+          source <(curl -sL https://github.com/aem-design/aemdesign-docker/releases/latest/download/container_verify.sh)
+          (cd test && ./run_tests.sh "$IMAGE:${GITHUB_BRANCH##*/}")
+          docker images
+      - name: login to docker registry
+        if: github.ref != 'refs/heads/master'
+        run: echo "${{ secrets.DOCKER_PASSWORD }}" | docker login ${DOCKER_REGISTRY} -u "${{ secrets.DOCKER_USERNAME }}" --password-stdin
+      - name: push image version
+        if: github.ref != 'refs/heads/master'
+        run: docker push $IMAGE:${GITHUB_BRANCH##*/}        
+
+      - name: update registry description with readme on master
+        if: github.ref == 'refs/heads/master'
+        run: |
+          docker run --rm -v $(pwd):/data/ aemdesign/dockerhub-description "$DOCKER_USERNAME" "$DOCKER_PASSWORD" "$IMAGE"
