@@ -36,3 +36,5 @@ In Bash
 ```powershell
 docker run -it --rm -v `pwd`:/build gvfn/clang-buildpack:ubuntu-10 bash
 ```
+
+Your current folder will be mapped into `/build` folder for your build activities.
