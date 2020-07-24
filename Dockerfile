@@ -1,8 +1,7 @@
 FROM ubuntu:bionic
 
-MAINTAINER devops <devops@governance.foundation>
-
-LABEL   os="ubuntu:bionic" \
+LABEL   maintainer="devops <devops@governance.foundation>" \
+        os="ubuntu:bionic" \
         container.description="clang build pack" \
         version="1.0.0" \
         imagename="clang-buildpack" \
