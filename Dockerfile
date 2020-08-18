@@ -30,6 +30,9 @@ RUN dpkg --add-architecture i386 \
        gnupg \
        ca-certificates \
        dh-autoreconf \
+    # Install helpers for code debug
+    && apt-get install -y --no-install-recommends \
+       gdb \
     # Install compiler toolset
     && apt-get install -y --no-install-recommends \
        lsb-release \ 
