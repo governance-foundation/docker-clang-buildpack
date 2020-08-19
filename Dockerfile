@@ -33,6 +33,7 @@ RUN dpkg --add-architecture i386 \
     # Install helpers for code debug
     && apt-get install -y --no-install-recommends \
        gdb \
+    && echo "kernel.yama.ptrace_scope = 0">/etc/sysctl.d/10-ptrace.conf
     # Install compiler toolset
     && apt-get install -y --no-install-recommends \
        lsb-release \ 
