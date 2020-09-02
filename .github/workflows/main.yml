@@ -4,8 +4,9 @@ on: push
 
 jobs:
   build:
+    if: "!contains(github.event.head_commit.message, 'skip ci')"
     
-    runs-on: ubuntu-latest
+    runs-on: windows-latest
     env:
       DOCKER_REGISTRY: docker.io
       ORGANISATION_NAME: gvfn
@@ -23,7 +24,7 @@ jobs:
         if: github.ref != 'refs/heads/master'
         run: |
           docker build --pull -t $IMAGE:${GITHUB_BRANCH##*/} .
-          ./test/run_tests.sh "$IMAGE:${GITHUB_BRANCH##*/}" "$TEST_COMMAND_VERIFY"
+          bash ./test/run_tests.sh "$IMAGE:${GITHUB_BRANCH##*/}" "$TEST_COMMAND_VERIFY"
           docker images
       - name: login to docker registry
         if: github.ref != 'refs/heads/master'
