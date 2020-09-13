@@ -71,8 +71,19 @@ RUN dpkg --add-architecture i386 \
        libicu-dev \
        libbz2-dev \
        libcurl4-openssl-dev \
+    # Install Build Tools
+    && sudo apt-get install -y \
+       clang-tidy \
+       clang-tools \
+       clang-format \
+       cppcheck \
+       doxygen \
+       graphviz \
     && apt-get autoremove -y \
     && apt-get clean all \
+    # Update llvm tools
+    && update-alternatives --install /usr/local/bin/llvm-profdata llvm-profdata /usr/lib/llvm-10/bin/llvm-profdata 20 \
+    && update-alternatives --install /usr/local/bin/llvm-cov llvm-cov /usr/lib/llvm-10/bin/llvm-cov 20 \
     # Update default compiler
     && update-alternatives --install /usr/bin/clang++ clang++ /usr/bin/clang++-${LLVM_VERSION} 100 \
     && update-alternatives --install /usr/bin/clang clang /usr/bin/clang-${LLVM_VERSION} 100 \
