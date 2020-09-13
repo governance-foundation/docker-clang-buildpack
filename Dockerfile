@@ -120,5 +120,5 @@ RUN dpkg --add-architecture i386 \
     && printf 'eval "$(pyenv init -)"\n' >> ~/.bashrc \
     && printf 'eval "$(pyenv virtualenv-init -)"\n' >> ~/.bashrc
 
-USER devops
+# USER devops
 WORKDIR /home/devops
