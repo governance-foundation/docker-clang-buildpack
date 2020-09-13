@@ -79,6 +79,7 @@ RUN dpkg --add-architecture i386 \
        cppcheck \
        doxygen \
        graphviz \
+       valgrind \
     && apt-get autoremove -y \
     && apt-get clean all \
     # Update llvm tools
